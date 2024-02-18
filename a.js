@@ -99,8 +99,8 @@ async function createTypeCollectionAndIssueCredential() {
                 recipient: "polygon:0x6C3b3225759Cbda68F96378A9F0277B4374f9F06",
                 credential: {
                     subject: {
-                        voterID: "Voter123456",
-                        age: "25",
+                        voterID: "BD03262005",
+                        age: "NUM",
                         citizenship: "US",
                         eligibleToVote: true,
                     },
