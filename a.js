@@ -1,3 +1,5 @@
+// originally test2.js (combines the first 3 steps: create, collect, issue)
+
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 async function waitForContractAddress(credentialRetrievalId, attempts = 0) {
@@ -106,19 +108,10 @@ async function createTypeCollectionAndIssueCredential() {
                 }
             }),
         };
-        
+
         const issueResponse = await fetch(`https://staging.crossmint.com/api/unstable/collections/${collectionId}/credentials`, issueCredentialOptions);
         const issueData = await issueResponse.json();
         console.log("Credential issued:", issueData);
-        fetch(`https://staging.crossmint.com/api/unstable/collections/${collectionId}/credentials`, issueCredentialOptions)
-        .then((response) => response.json())
-        .then((response) => console.log(response))
-        .catch((err) => console.error(err));
-
-        const credentialRetrievalId = issueData.retrievalId;
-        await delay(20000)
-        const contractAddress = await waitForContractAddress(credentialRetrievalId);
-        console.log("Contract Address:", contractAddress);
     } catch (error) {
         console.error("Error:", error);
     }

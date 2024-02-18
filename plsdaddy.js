@@ -89,7 +89,20 @@ async function issueCredential(apiKey, collectionId) {
     .catch((err) => console.error("Issue credential error:", err));
 
 
-    
+    const actionId = '3f97b4c2-4f01-4fe2-921a-47df89bc051b'; // Use the actionId from your response
+const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
+
+const options = {
+  method: 'GET',
+  headers: {
+    "X-API-KEY": apiKey,
+  }
+};
+
+fetch(`https://staging.crossmint.com/api/2022-06-09/actions/${actionId}`, options)
+.then(response => response.json())
+.then(response => console.log(response))
+.catch(err => console.error(err));
 }
 
 createTypeAndCollection();
