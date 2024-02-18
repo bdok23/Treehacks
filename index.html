@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voting Authenticity Verification</title>
+    <title>PollPass</title>
+    <link href="favicon.ico" rel="icon">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <div class="container">
-        <h1>Voting Eligibility Check</h1>
+        <h1>Voting Eligibility</h1>
         <form id="eligibilityForm">
             <div class="form-group">
                 <label for="name">Name:</label>
@@ -33,7 +35,17 @@
             <button type="submit">Verify Eligibility</button>
         </form>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js">
+        document.getElementById('eligibilityForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+    
+            // Get values from form elements
+            var name = document.getElementById('name').value;
+            var age = document.getElementById('age').value;
+            var citizenship = document.getElementById('citizenship').value;
+            
 
+    </script>
 </body>
 </html>
