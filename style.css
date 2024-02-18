@@ -17,11 +17,6 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    color: #333333; /* Dark text color */
-    margin-bottom: 20px;
-}
-
 .form-group {
     margin-bottom: 15px;
     display: flex;
@@ -63,4 +58,38 @@ button {
 button:hover {
     background-color: #0056b3; /* Button background color on hover */
     transform: scale(1.05); /* Slight scale-up on hover */
+}
+
+
+h1 {
+    color: #333333; /* Dark text color */
+    margin-bottom: 20px;
+}
+
+.voting-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Add a 20px gap between buttons */
+}
+
+.voting-button {
+    padding: 40px; /* Adjust padding for vertical size */
+    width: 150px; /* Set a fixed width for consistency */
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff; /* Button background color */
+    color: #ffffff; /* Button text color */
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+.voting-button:hover {
+    background-color: #0056b3; /* Button background color on hover */
+    transform: scale(1.05); /* Slight scale-up on hover */
+}
+
+.chosen-option {
+    background-color: #28a745; /* Green background color for chosen option */
+    color: #ffffff; /* White text color for chosen option */
 }
