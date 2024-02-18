@@ -31,17 +31,27 @@
             <button type="submit">Verify Eligibility</button>
         </form>
     </div>
-    <script src="script.js">
-        document.getElementById('eligibilityForm').addEventListener('submit', function(event) {
-            // Prevent the default form submission
-            event.preventDefault();
-    
-            // Get values from form elements
-            var name = document.getElementById('name').value;
-            var age = document.getElementById('age').value;
-            var citizenship = document.getElementById('citizenship').value;
-            
 
+    <script src="script.js">
+        function verifyAndSubmit() {
+            // Get values from the form elements
+            const name = document.getElementById('name').value;
+            const age = parseInt(document.getElementById('age').value);
+            const citizenship = document.getElementById('citizenship').value;
+
+            // Check eligibility conditions
+            const isEligible = age >= 18 && citizenship === 'US';
+
+            // If eligible, redirect to voting.html
+            if (isEligible) {
+                alert('You are eligible! Redirecting to voting.html...');
+                window.location.href = 'voting.html';
+                return false; // Prevent the form from submitting
+            } else {
+                alert('You are not eligible.');
+                return false; // Prevent the form from submitting
+            }
+        }
     </script>
 </body>
 </html>
