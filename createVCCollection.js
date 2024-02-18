@@ -1,14 +1,22 @@
 const options = {
-    method: "POST",
-    headers: {
-      "X-API-KEY": "sk_staging_5zsrMa8dDpvcT5xkFSWxGBLCefNbdvxSDYBnVCXiyz4fd95nW9MvC934Upr68KVFhzkQ2SkNanJdMyS8d3vZiAgBvVeJ8HyAH1PSLEVSEELr9AofWCYoQuWsg9Ux7aGyR7soK4XxALxK7bhcFXb7HCBGPZWkogZSgmWzBWcZ3vcWqtYMBcFEZkDLcdWBQWa1LJKtcpR5VZ4WXgK6n5JNJRjz",
-      "Content-Type": "application/json",
+  method: "POST",
+  headers: {
+    "X-API-KEY": "sk_staging_AGQCMCiEigeFJttJ3BbSjyBDbaxjMW4DB6kQ9vW2hLVaLKc36QQUWdYZHnhYvfTXS4Y9Y4w7VNke1qRStay1nkqCCK2KDpjHa2RdLx54Sm3qUfFUP4AKq5qXQLZcs5SNsFxohxZqgde8rVnJi9WGsDFVnsdVH8ABeq17m4qkGVTfYXxpyFa4CJ16V9rEUgb9SuWsTeob386JVrvQ5q5XZrrV", // Replace with your actual API key
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    chain: "polygon",
+    credentials: {
+      type: "urn:uuid:87657211-466d-4b45-964d-305756847d87" // Replace with the ID obtained after creating a credential type
     },
-    body: '{"chain":"polygon","credentials":{"type":"urn:uuid:1a1a562a-5550-494b-9826-4c4adc5f6894"},"metadata":{"name":"VC Collection Name QS","description":"Test"}}',
-  };
-  
-  fetch("https://staging.crossmint.com/api/unstable/collections/", options)
-    .then((response) => response.json())
-    .then((response) => console.log(response))
-    .catch((err) => console.error(err));
-  
+    metadata: {
+      name: "Voter Verification Credentials 2024", // Example name, adjust as needed
+      description: "Collection of verifiable credentials for voter authentication in the 2024 elections." // Example description, adjust as needed
+    }
+  }),
+};
+
+fetch("https://staging.crossmint.com/api/unstable/collections/", options)
+  .then((response) => response.json())
+  .then((response) => console.log(response))
+  .catch((err) => console.error(err));
