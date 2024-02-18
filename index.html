@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Authenticity Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Voting Eligibility Check</h1>
+        <form id="eligibilityForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="citizenship">Citizenship:</label>
+                <select id="citizenship" name="citizenship" required>
+                    <option value="">Select</option>
+                    <option value="US">United States</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <button type="submit">Verify Eligibility</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

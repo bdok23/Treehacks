@@ -18,3 +18,5 @@ fetch("https://staging.crossmint.com/api/unstable/credentials/types", options)
   .then((response) => response.json())
   .then((response) => console.log(response))
   .catch((err) => console.error(err));
+
+  

@@ -11,7 +11,7 @@ const options = {
       image: "ipfs://QmUGeWerAfyKVVdAjaxYdAhK74oJmBvusPdKtNDN3e1bYN", // Optional: A relevant image or icon if you have one // copied the image from the documentation
       description: "Credential for verifying voter eligibility."
     },
-    recipient: "polygon:0x6C3b3225759Cbda68F96378A9F0277B4374f9F06", // Replace with the recipient's actual blockchain address
+    recipient: "polygon:0x6C3b3225759Cbda68F96378A9F0277B4374f9F06", // Replace with the recipient's actual blockchain address    email:a@a.com:polygon
     credential: {
       subject: {
         voterID: "Voter123456", // Example Voter ID, replace with actual data
