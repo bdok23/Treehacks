@@ -1,3 +1,5 @@
+// originally test2.js (combines the first 3 steps: create, collect, issue)
+
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 async function waitForContractAddress(credentialRetrievalId, attempts = 0) {

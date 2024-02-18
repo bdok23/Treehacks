@@ -29,12 +29,9 @@ async function waitForContractAddress(credentialRetrievalId, attempts = 0) {
         return null;
     }
 }
-function delay(time) {
-    return new Promise(resolve => setTimeout(resolve, time));
-}
 
 async function createTypeCollectionAndIssueCredential() {
-    const apiKey = "sk_staging_AGQCMCiEigeFJttJ3BbSjyBDbaxjMW4DB6kQ9vW2hLVaLKc36QQTu1JfPXYSQbs2fP6D7DMs4LwgTwg2vPURbjTspJFGe6L119T5MiyGwjWUUsDbPhUisiWHZmh5PDTcLK1ogQb259eReX7tKzho5njLN6KQj6jHksDSx112gixyxbwUWmbfQz9ZwchVnaTm8LHP4nEZV6jj1MrtCPg3sNrP";
+    const apiKey = "sk_staging_AGQCMCiEigeFJttJ3BbSjyBDbaxjMW4DB6kQ9vW2hLVaLKc36QQUWdYZHnhYvfTXS4Y9Y4w7VNke1qRStay1nkqCCK2KDpjHa2RdLx54Sm3qUfFUP4AKq5qXQLZcs5SNsFxohxZqgde8rVnJi9WGsDFVnsdVH8ABeq17m4qkGVTfYXxpyFa4CJ16V9rEUgb9SuWsTeob386JVrvQ5q5XZrrV";
     const headers = {
         "X-API-KEY": apiKey,
         "Content-Type": "application/json",
@@ -107,9 +104,21 @@ async function createTypeCollectionAndIssueCredential() {
             }),
         };
 
-        const issueResponse = await fetch(`https://staging.crossmint.com/api/unstable/collections/${collectionId}/credentials`, issueCredentialOptions);
+        const issueResponse = await fetch('https://staging.crossmint.com/api/unstable/collections/${collectionId}/credentials', issueCredentialOptions);
         const issueData = await issueResponse.json();
         console.log("Credential issued:", issueData);
+
+        // Extract the credentialRetrievalId from the issue data
+        const credentialRetrievalId = issueData.credentialRetrievalId;
+
+        // Step 4: Wait for the contract address to resolve
+        const contractAddress = await waitForContractAddress(credentialRetrievalId);
+        if (contractAddress) {
+            console.log("Contract address resolved:", contractAddress);
+        } else {
+            console.error("Failed to retrieve contract address.");
+        }
+
     } catch (error) {
         console.error("Error:", error);
     }
