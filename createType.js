@@ -1,7 +1,7 @@
 const options = {
     method: "POST",
     headers: {
-      "X-API-KEY": "sk_production_9tW6CCCcaf24zi66M2GcoxfKaVBRWGaZ9KSSGzCUiafxriJVQ6U1DAD2asiyS4gwgojTGdYx2nBfj3vZ3JzE9GQskEb6wd2vmbgCMje3ZcPGieKGogaqtGWaiZ65DjEcpN8s7kjXCpotVTfcrTs9dAjdmxAXJRdELgJqg7QKBaSFQb8NB9Lh5ovGYUoP9oNjBvrXy5F1akskvnoHHS7EpbC9",
+      "X-API-KEY": "sk_staging_5zsrMa8dDpvcT5xkFSWxGBLCefNbdvxSDYBnVCXiyz4fd95nW9MvC934Upr68KVFhzkQ2SkNanJdMyS8d3vZiAgBvVeJ8HyAH1PSLEVSEELr9AofWCYoQuWsg9Ux7aGyR7soK4XxALxK7bhcFXb7HCBGPZWkogZSgmWzBWcZ3vcWqtYMBcFEZkDLcdWBQWa1LJKtcpR5VZ4WXgK6n5JNJRjz",
       "Content-Type": "application/json",
     },
     body: '{"credentialSubjectSchema":[{"name":"course","type":"string"},{"name":"passed","type":"bool"}]}',
