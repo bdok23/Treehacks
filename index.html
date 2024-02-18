@@ -10,8 +10,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Voting Eligibility</h1>
-        <form id="eligibilityForm">
+        <h1>Voting Eligibility Check</h1>
+        <!-- Add the onsubmit attribute to the form -->
+        <form id="eligibilityForm" onsubmit="return verifyAndSubmit()">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -32,26 +33,8 @@
         </form>
     </div>
 
-    <script src="script.js">
-        function verifyAndSubmit() {
-            // Get values from the form elements
-            const name = document.getElementById('name').value;
-            const age = parseInt(document.getElementById('age').value);
-            const citizenship = document.getElementById('citizenship').value;
+    <script src="indexScript.js">
 
-            // Check eligibility conditions
-            const isEligible = age >= 18 && citizenship === 'US';
-
-            // If eligible, redirect to voting.html
-            if (isEligible) {
-                alert('You are eligible! Redirecting to voting.html...');
-                window.location.href = 'voting.html';
-                return false; // Prevent the form from submitting
-            } else {
-                alert('You are not eligible.');
-                return false; // Prevent the form from submitting
-            }
-        }
     </script>
 </body>
 </html>

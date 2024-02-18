@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voter Verification</title>
+</head>
+<body>
+    <form id="voterInfoForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="number" id="age" placeholder="Your Age" required>
+        <select id="citizenship" required>
+            <option value="">Your Citizenship</option>
+            <option value="US">US</option>
+            <option value="Other">Other</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="verificationResult"></div>
+    <script src="app.js"></script>
+</body>
+</html>
