@@ -7,7 +7,7 @@ const options = {
   body: JSON.stringify({
     chain: "polygon",
     credentials: {
-      type: "urn:uuid:87657211-466d-4b45-964d-305756847d87" // Replace with the ID obtained after creating a credential type
+      type: "urn:uuid:7d2c35d9-6b14-49e5-bb6d-3966c11c597b" // Replace with the ID obtained after creating a credential type
     },
     metadata: {
       name: "Voter Verification Credentials 2024", // Example name, adjust as needed

@@ -1,4 +1,4 @@
-const collectionId = "32b26117-c85c-4ca1-95ef-eed7e515f7e6"; // Replace with your actual collection ID
+const collectionId = "a8563cce-7b62-4c1a-a9ae-c909dda236e9"; // Replace with your actual collection ID
 const options = {
   method: "POST",
   headers: {
@@ -15,9 +15,9 @@ const options = {
     credential: {
       subject: {
         voterID: "Voter123456", // Example Voter ID, replace with actual data
-        age: "25", // Age as a string
+        age: "15", // Age as a string
         citizenship: "US", // Citizenship, matching your schema requirements
-        eligibleToVote: true, // This should match the type expected by your schema, boolean
+        eligibleToVote: false, // This should match the type expected by your schema, boolean
       },
       expiresAt: "2034-02-02" // Expiration date of the credential
     }
