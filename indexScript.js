@@ -5,7 +5,9 @@ function verifyAndSubmit() {
     const citizenship = document.getElementById('citizenship').value;
 
     // Check eligibility conditions
-    const isEligible = age >= 18 && citizenship === 'US';
+    const isEligible = age >= 18 && citizenship === 'US' && jsonData.isValid;
+
+    console.log(jsonData.isValid)
 
     // If eligible, redirect to voting.html
     if (isEligible) {

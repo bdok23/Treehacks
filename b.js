@@ -3,6 +3,8 @@
 // combinedScript.js
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
+global.jsonData = null;
+
 const retrieveAndVerifyCredential = async () => {
   // Step 1: Retrieve the credential
   const contractAddress = "0x0949BA9675211bcFcE7a3bB8d08cc1dfc0b0B8BD";
@@ -36,6 +38,7 @@ const retrieveAndVerifyCredential = async () => {
   try {
     const verifyResponse = await fetch("https://staging.crossmint.com/api/unstable/credentials/verify", verifyOptions);
     const verifyResult = await verifyResponse.json();
+    global.jsonData = verifyResult;
     console.log("Credential verification result:", verifyResult);
   } catch (error) {
     console.error("Error verifying credential:", error);
